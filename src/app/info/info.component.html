@@ -1,0 +1,70 @@
+<div class="contenedor-general">
+    <img src="../../assets/img/banner.png" class="img-banner">
+
+    <h1 class="title-page">RICK AND MORTY</h1>
+
+    <div class="contenedor-filter">
+        <div class="containerInput">
+            <input type="text" (keyup)="keyOn($event)" class="input-buscador" placeholder="Buscar por nombre">
+        </div>
+    </div>
+
+    <div class="contenedor-general-info">
+
+        <div class="contenedor-data">
+            @for (item of respuesta; track item.id) {
+                <div class="card">
+                    <div class="content">
+                        <div class="back">
+                            <div class="back-content">
+                                <img src="{{item.image}}" alt="">
+                            </div>
+                        </div>
+    
+                        <div class="front">
+                            <div class="img">
+                                <div class="circle"></div>
+                                <div class="circle" id="right"></div>
+                                <div class="circle" id="bottom"></div>
+                            </div>
+    
+                            <div class="front-content">
+                                <small class="name">{{item.name}}</small>
+                                <div class="description">
+    
+                                    <div class="title">
+                                        <p class="title">Status: <strong>{{item.status}}</strong></p>
+                                    </div>
+                                    <div class="title">
+                                        <p class="title">Species: <strong>{{item.species}}</strong></p>
+                                    </div>
+                                    <div class="title">
+                                        <p class="title">Gender: <strong>{{item.gender}}</strong></p>
+                                    </div>
+                                    <div class="title">
+                                        <p class="title">Origin: <strong>{{item.origin.name}}</strong></p>
+                                    </div>
+                                    <div class="title">
+                                        <p class="title">Location: <strong>{{item.location.name}}</strong></p>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="contenedores-botones">
+            <div class="button-left">
+                <button (click)="backPage()">Back</button>
+            </div>
+            <div class="button-right">
+                <button (click)="nextPage()">Next</button>
+            </div>
+        </div>
+
+    </div>
+</div>
